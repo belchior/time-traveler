@@ -4,11 +4,17 @@
   "description": "",
   "main": "time-traveler.js",
   "scripts": {
-    "test": "npx jest --watchAll",
-    "build": "cp -rL ./exemple/src ./dist",
-    "deploy": "gh-pages -d dist"
+    "test": "npx jest",
+    "demo:build": "cp -rL ./example/src ./dist",
+    "demo:deploy": "npx gh-pages -d dist",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
   },
-  "keywords": ["state", "state manager", "time traveler", "time line"],
+  "keywords": [
+    "state",
+    "state-management",
+    "time traveler",
+    "timeline"
+  ],
   "author": "Belchior Oliveira",
   "license": "MIT",
   "dependencies": {},
@@ -16,6 +22,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-plugin-jest": "^21.13.0",
     "gh-pages": "^1.1.0",
