@@ -1,0 +1,18 @@
+{
+  "name": "time-traveler-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "link": "ln -sf ../../time-traveler.js ./src/time-traveler.js",
+    "serve": "browser-sync start --server './src' --port 3000 --cors --no-ui --no-open --files ./",
+    "start": "npm run link && npm run serve"
+  },
+  "keywords": [],
+  "author": "Belchior Oliveira",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.23.6"
+  }
+}

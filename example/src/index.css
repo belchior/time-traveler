@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, 'Helvetica Neue', Arial;
+  background-color: #eeeeee;
+}
+
+.container {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  padding: 1rem;
+  max-width: 50rem;
+}
+
+.navigation > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  position: relative;
+  flex: 1;
+  border-radius: 0.25rem;
+  border: 0;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  background-color: #52ab3c;
+  color: #ffffff;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+
+.btn-prev,
+.btn-next {
+  background-color: #3aa1ea;
+}
+.btn-prev {
+  margin-right: 1rem;
+}
+
+.time-line {
+  margin: 1rem 0 2rem 0;
+}
+.time-line::before {
+  content: 'time line';
+  display: block;
+  margin-right: 0.5rem;
+  font-style: italic;
+  color: #848484;
+}
+
+.btn-time-line {
+  margin: 0 0.7rem 0 0;
+  border-radius: 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  line-height: 0.9rem;
+}
+.btn-time-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.7rem 0 0.7rem 0.7rem;
+  border-color: transparent transparent transparent #eeeeee;
+}
+.btn-time-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.7rem 0 0.7rem 0.7rem;
+  border-color: transparent transparent transparent #52ab3c;
+}
+.btn-time-line.active {
+  background-color: #ff0000;
+}
+.btn-time-line.active::after {
+  border-color: transparent transparent transparent #ff0000;
+}
