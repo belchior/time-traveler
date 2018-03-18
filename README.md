@@ -4,4 +4,4 @@
 # TimeTraveler
 Uma lib para gerenciar mudanças de estado de uma forma linear e não linear.
 
-demo: [https://belchior.github.io/time-treveler/](https://belchior.github.io/time-treveler/)
+demo: [https://belchior.github.io/time-treveler/](https://belchior.github.io/time-traveler/)
