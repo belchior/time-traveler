@@ -13,13 +13,13 @@
     align-content: center;
     box-sizing: border-box;
     flex: 1 1 auto;
-    padding: 1rem;
+    padding: 0 1rem;
     max-width: 40rem;
   }
 
   .title {
     flex: 1 0 100%;
-    margin: 0 0 3rem 0;
+    margin: 2rem 0 2rem 0;
     text-align: center;
   }
 
@@ -79,20 +79,25 @@
 
   .btn-time-line {
     margin: 0 0 1rem 5rem;
-    border-radius: 0 0.25rem 0.25rem 0;
     padding: 0.5rem 0;
     color: #ffffff;
   }
   .btn-time-line:last-child {
     margin-bottom: 0;
   }
+  .btn-time-line.active {
+    background-color: #dd5151;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 959px) {
   .btn-time-line:not(:first-child)::before {
     content: '';
     position: absolute;
     top: -1.7rem;
-    left: -3.05rem;
+    left: -3.15rem;
     display: inline-block;
-    width: 0.5rem;
+    width: 0.4rem;
     height: 2.7rem;
     background: #333333;
   }
@@ -101,32 +106,89 @@
     z-index: 1;
     position: absolute;
     top: 0.4rem;
-    left: -3.4rem;
+    left: -3.59rem;
     display: inline-block;
     border-radius: 50%;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.3rem;
+    height: 1.3rem;
     background-color: transparent;
     box-shadow:
       inset 0 0 0 0.3rem #333333,
-      inset 0 0 0 0.6rem #52ab3c;
+      inset 0 0 0 0.7rem #52ab3c;
   }
 
-  .btn-time-line.active {
-    background-color: #dd5151;
-  }
   .btn-time-line.active::after {
     box-shadow:
       inset 0 0 0 0.3rem #333333,
-      inset 0 0 0 0.6rem #dd5151;
+      inset 0 0 0 0.7rem #dd5151;
   }
 }
 
-@media (min-width: 36.25rem) { /* ~580px */
+@media (min-width: 580px) {
+  .title {
+    text-align: left;
+  }
   .navigation {
     flex: 1;
   }
   .state-container {
     margin: 4rem 0 0 3rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 60rem;
+  }
+  .title {
+    flex: 0 1 auto;
+  }
+  .state-container {
+    margin: 2rem 0 0 0;
+  }
+  .controllers {
+    padding: 0;
+  }
+  .time-line {
+    flex-direction: row;
+    align-items: center;
+  }
+  .time-line::before {
+    margin: 0 1rem 0 0;
+  }
+
+  .btn-time-line {
+    border-radius: 0;
+    margin: 0 1rem 0 0;
+    padding-left: 1rem;
+  }
+  .btn-time-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent transparent transparent #eeeeee;
+  }
+  .btn-time-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent transparent transparent #52ab3c;
+  }
+  .btn-time-line.active::after {
+    border-color: transparent transparent transparent #dd5151;
   }
 }
