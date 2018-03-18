@@ -57,10 +57,14 @@ const activeTheCurrentButton = buttonList => {
   });
 };
 
+const beautify = text => {
+  return text.replace(/({|,)/g, '$1<br>&nbsp;&nbsp;').replace(/(})/g, '<br>$1').replace(/(:)/g, '$1&nbsp;');
+};
+
 const updateStateBox = currentState => {
   currentState = {...currentState};
   delete currentState.activeButton;
-  document.querySelector('.state').innerHTML = JSON.stringify(currentState);
+  document.querySelector('.state').innerHTML = beautify(JSON.stringify(currentState));
 };
 
 document.querySelector('.btn-prev').addEventListener('click', () => tt.prev());
