@@ -157,6 +157,8 @@
   }
   .time-line::before {
     margin: 0 1rem 0 0;
+    font-weight: normal;
+    color: #aaaaaa;
   }
 
   .btn-time-line {
