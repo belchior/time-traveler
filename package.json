@@ -5,7 +5,7 @@
   "main": "time-traveler.js",
   "scripts": {
     "test": "npx jest",
-    "demo:build": "cp -rL ./example/src ./dist",
+    "demo:build": "rm -rf dist; cp -rL ./example/src ./dist",
     "demo:deploy": "npx gh-pages -d dist",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
