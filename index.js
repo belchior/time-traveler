@@ -1,4 +1,4 @@
-import { TimeTraveler } from './time-traveler.js';
+import TimeTraveler from './time-traveler.js';
 
 const initialState = () => {
   return { checkingAccount: 100000, activeButton: 'btn-initial' };
