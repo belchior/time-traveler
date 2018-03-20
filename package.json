@@ -1,13 +1,15 @@
 {
-  "name": "time-traveler",
-  "version": "1.0.0",
+  "name": "@belchior/time-traveler",
+  "version": "1.0.2",
   "description": "",
   "main": "time-traveler.js",
-  "scripts": {
-    "test": "npx jest",
-    "demo:build": "rm -rf dist; cp -rL ./example/src ./dist",
-    "demo:deploy": "npx gh-pages -d dist",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  "module": "time-traveler.js",
+  "types": "time-traveler.js",
+  "author": "Belchior Oliveira (https://github.com/belchior)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belcihor/time-traveler.git"
   },
   "keywords": [
     "state",
@@ -15,8 +17,12 @@
     "time traveler",
     "timeline"
   ],
-  "author": "Belchior Oliveira",
-  "license": "MIT",
+  "scripts": {
+    "test": "npx jest",
+    "demo:build": "rm -rf dist; cp -rL ./example/src ./dist",
+    "demo:deploy": "npx gh-pages -d dist",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
