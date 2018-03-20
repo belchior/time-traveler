@@ -1,5 +1,5 @@
 
-export class TimeTraveler {
+export default class TimeTraveler {
   constructor(initialTimeLine, initialState) {
     if (Array.isArray(initialTimeLine) === false) {
       throw new TypeError('TimeTraveler: The first parameter must be an array');

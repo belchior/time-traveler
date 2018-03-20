@@ -1,4 +1,4 @@
-import { TimeTraveler } from './time-traveler';
+import TimeTraveler from './time-traveler';
 
 const initialState = () => {
   return { checkingAccount: 100000, };
