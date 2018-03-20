@@ -9,10 +9,8 @@ export class TimeTraveler {
     }
 
     initialTimeLine = initialState ? [() => initialState, ...initialTimeLine] : initialTimeLine;
-    this.index = 0;
     this.cache = new Map();
     this.timeLine = new Map(initialTimeLine.map(func => [func, func]));
-    this.end = this.timeLine.length;
     this.state = initialTimeLine[0]();
     this.cache.set(initialTimeLine[0], this.state);
   }

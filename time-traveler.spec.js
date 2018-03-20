@@ -158,6 +158,11 @@ describe('Method next', () => {
     tt.goTo(buyACar); expect(tt.getState()).toEqual(state);
     tt.next(); expect(tt.getState()).toEqual(state);
   });
+  it('should return the TimeTraveler instance when called', () => {
+    const tt = new TimeTraveler(timeLine);
+
+    expect(tt.next()).toBe(tt);
+  });
 });
 
 describe('Method prev', () => {
@@ -178,6 +183,11 @@ describe('Method prev', () => {
     expect(tt.getState()).toEqual(prevState);
     tt.next(); expect(tt.getState()).toEqual(state);
     tt.prev(); expect(tt.getState()).toEqual(prevState);
+  });
+  it('should return the TimeTraveler instance when called', () => {
+    const tt = new TimeTraveler(timeLine);
+
+    expect(tt.next()).toBe(tt);
   });
 });
 
@@ -201,6 +211,11 @@ describe('Method goTo', () => {
 
     state = sellCar(state);
     tt.goTo(sellCar); expect(tt.getState()).toEqual(state);
+  });
+  it('should return the TimeTraveler instance when called', () => {
+    const tt = new TimeTraveler(timeLine);
+
+    expect(tt.next()).toBe(tt);
   });
 });
 
