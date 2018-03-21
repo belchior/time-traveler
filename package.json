@@ -1,7 +1,7 @@
 {
   "name": "@belchior/time-traveler",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "TimeTraveler é uma biblioteca para gerenciamento de estado. Ela torna-se útil em cenários onde é necessário compor um objeto (estado) baseado em uma sequência de passos (linha do tempo), ela permite alterarnar entre os estados produzidos usando uma alegoria de viagem no tempo.",
   "main": "time-traveler.js",
   "module": "time-traveler.js",
   "types": "time-traveler.js",
