@@ -95,7 +95,7 @@ describe('TimeTraveler', () => {
 });
 
 describe('TimeTraveler constructor', () => {
-  it('should receive an array of function as the first parameter (the timeTine)', () => {
+  it('should receive an array of function as the first parameter (the timeLine)', () => {
     const tt = new TimeTraveler(timeLine);
     expect(tt).toBeInstanceOf(TimeTraveler);
   });
@@ -127,7 +127,7 @@ describe('Method next', () => {
     tt.next();
     expect(tt.getState()).toEqual(state);
   });
-  it('should return from the cache when the state was previously produced ', () => {
+  it('should return from cache when the state was previously produced', () => {
     const tt = new TimeTraveler(timeLine);
     const prevState = initialState();
     const state = buyACar(initialState());
@@ -187,7 +187,7 @@ describe('Method prev', () => {
   it('should return the TimeTraveler instance when called', () => {
     const tt = new TimeTraveler(timeLine);
 
-    expect(tt.next()).toBe(tt);
+    expect(tt.prev()).toBe(tt);
   });
 });
 
@@ -215,7 +215,7 @@ describe('Method goTo', () => {
   it('should return the TimeTraveler instance when called', () => {
     const tt = new TimeTraveler(timeLine);
 
-    expect(tt.next()).toBe(tt);
+    expect(tt.goTo(buyABike)).toBe(tt);
   });
 });
 
