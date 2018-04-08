@@ -43,10 +43,30 @@ const pedalingToWork = (state) => {
 const timeLine = [ initialState, buyACar, buyABike, sellCar, pedalingToWork, ];
 const tt = new TimeTraveler(timeLine);
 
+document.querySelector('.btn-prev').addEventListener('click', () => tt.prev());
+document.querySelector('.btn-next').addEventListener('click', () => tt.next());
+document.querySelector('.btn-initial').addEventListener('click', () => tt.goTo(initialState));
+document.querySelector('.btn-buy-car').addEventListener('click', () => tt.goTo(buyACar));
+document.querySelector('.btn-buy-bike').addEventListener('click', () => tt.goTo(buyABike));
+document.querySelector('.btn-sell-car').addEventListener('click', () => tt.goTo(sellCar));
+document.querySelector('.btn-pedaling').addEventListener('click', () => tt.goTo(pedalingToWork));
 
-const timeLineButtons = Array.from(document.querySelectorAll('.time-line .btn'));
 
-const activeTheCurrentButton = buttonList => {
+/*
+  DOM Manipulation
+*/
+
+const beautify = text => {
+  return text.replace(/({|,)/g, '$1<br>&nbsp;&nbsp;').replace(/(})/g, '<br>$1').replace(/(:)/g, '$1&nbsp;');
+};
+
+const updateStateBox = currentState => {
+  currentState = { ...currentState };
+  delete currentState.activeButton;
+  document.querySelector('.state').innerHTML = beautify(JSON.stringify(currentState));
+};
+
+const activeCurrentButton = buttonList => {
   const activeButton = tt.getState().activeButton;
   buttonList.map(btn => {
     if (btn.classList.contains(activeButton)) {
@@ -57,32 +77,15 @@ const activeTheCurrentButton = buttonList => {
   });
 };
 
-const beautify = text => {
-  return text.replace(/({|,)/g, '$1<br>&nbsp;&nbsp;').replace(/(})/g, '<br>$1').replace(/(:)/g, '$1&nbsp;');
-};
-
-const updateStateBox = currentState => {
-  currentState = {...currentState};
-  delete currentState.activeButton;
-  document.querySelector('.state').innerHTML = beautify(JSON.stringify(currentState));
-};
-
-document.querySelector('.btn-prev').addEventListener('click', () => tt.prev());
-document.querySelector('.btn-next').addEventListener('click', () => tt.next());
-document.querySelector('.btn-initial').addEventListener('click', () => tt.goTo(initialState));
-document.querySelector('.btn-buy-car').addEventListener('click', () => tt.goTo(buyACar));
-document.querySelector('.btn-buy-bike').addEventListener('click', () => tt.goTo(buyABike));
-document.querySelector('.btn-sell-car').addEventListener('click', () => tt.goTo(sellCar));
-document.querySelector('.btn-pedaling').addEventListener('click', () => tt.goTo(pedalingToWork));
+const timeLineButtons = Array.from(document.querySelectorAll('.time-line .btn'));
 
 Array.from(
   document.querySelectorAll('.navigation .btn'),
   button => button.addEventListener('click', () => {
-    activeTheCurrentButton(timeLineButtons);
+    activeCurrentButton(timeLineButtons);
     updateStateBox(tt.getState());
   })
 );
 
-
-activeTheCurrentButton(timeLineButtons);
+activeCurrentButton(timeLineButtons);
 updateStateBox(tt.getState());
