@@ -1,10 +1,10 @@
 {
   "name": "@belchior/time-traveler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TimeTraveler é uma biblioteca para gerenciamento de estado. Ela torna-se útil em cenários onde é necessário compor um objeto (estado) baseado em uma sequência de passos (linha do tempo), ela permite alterarnar entre os estados produzidos usando uma alegoria de viagem no tempo.",
-  "main": "time-traveler.js",
-  "module": "time-traveler.js",
-  "types": "time-traveler.js",
+  "main": "lib/time-traveler.js",
+  "module": "lib/time-traveler.js",
+  "types": "index.d.ts",
   "author": "Belchior Oliveira (https://github.com/belchior)",
   "license": "MIT",
   "repository": {
@@ -17,22 +17,39 @@
     "time traveler",
     "timeline"
   ],
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "index.d.ts",
+    "lib/time-traveler.js",
+    "lib/cjs/index.js",
+    "lib/mjs/index.mjs"
+  ],
   "scripts": {
     "test": "npx jest",
-    "demo:build": "rm -rf dist; cp -rL ./example/src ./dist",
-    "demo:deploy": "npx gh-pages -d dist",
+    "mkdir": "mkdir -p lib/cjs lib/mjs",
+    "mjs": "cp lib/time-traveler.js lib/mjs/index.mjs",
+    "cjs": "npx babel lib/time-traveler.js -o lib/cjs/index.js",
+    "build": "npm run mkdir && npm run mjs && npm run cjs",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "engines": {
+    "node": ">=6.5"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-plugin-jest": "^21.13.0",
     "gh-pages": "^1.1.0",
     "jest": "^22.4.2",
-    "regenerator-runtime": "^0.11.1"
+    "regenerator-runtime": "^0.11.1",
+    "typescript": "^2.7.2"
   }
 }

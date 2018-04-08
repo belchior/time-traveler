@@ -1,7 +1,0 @@
-coverage/
-dist/
-example/
-
-.babelrc
-.eslintrc
-.travis.yml

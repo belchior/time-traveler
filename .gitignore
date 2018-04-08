@@ -1,6 +1,8 @@
 coverage/
 dist/
 node_modules/
+examples/
+cjs/
+mjs/
 
-
-example/src/time-traveler.js
+demo/src/time-traveler.js
