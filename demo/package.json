@@ -8,12 +8,14 @@
     "serve": "browser-sync start --server './src' --port 3000 --cors --no-ui --no-open --files ./",
     "start": "npm run link && npm run serve",
     "build": "rm -rf dist; cp -rL ./src ./dist",
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "keywords": [],
   "author": "Belchior Oliveira",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.23.6"
   }
