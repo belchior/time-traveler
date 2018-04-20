@@ -7,8 +7,11 @@ declare class TimeTraveler {
   private timeLine: Map<Function, any>;
   private state: any;
 
+  private setState(): this;
+  add(): this;
+  getState(): any;
+  goTo(fn: Function): this;
   next(): this;
   prev(): this;
-  goTo(fn: Function): this;
-  getState(): any;
+  reset(): this;
 }
