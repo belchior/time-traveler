@@ -1,7 +1,7 @@
 {
   "name": "@belchior/time-traveler",
-  "version": "1.2.0",
-  "description": "TimeTraveler é uma biblioteca para gerenciamento de estado. Ela torna-se útil em cenários onde é necessário compor um objeto (estado) baseado em uma sequência de passos (linha do tempo), ela permite alterarnar entre os estados produzidos usando uma alegoria de viagem no tempo.",
+  "version": "1.4.0",
+  "description": "TimeTraveler is a library to management of state. It becomes useful in scenarios that is necessary compose object (state) based on a sequence of steps (timeline).",
   "main": "lib/time-traveler.js",
   "module": "lib/time-traveler.js",
   "types": "index.d.ts",
@@ -12,10 +12,10 @@
     "url": "https://github.com/belchior/time-traveler.git"
   },
   "keywords": [
+    "time travel",
+    "timeline",
     "state",
-    "state-management",
-    "time traveler",
-    "timeline"
+    "state-management"
   ],
   "directories": {
     "lib": "lib"
@@ -40,15 +40,15 @@
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.18.2",
-    "eslint-plugin-jest": "^21.13.0",
-    "jest": "^22.4.2",
+    "coveralls": "^3.0.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.15.1",
+    "jest": "^22.4.3",
     "regenerator-runtime": "^0.11.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.3"
   }
 }
