@@ -7,8 +7,9 @@ declare class TimeTraveler {
   private timeLine: Map<Function, any>;
   private state: any;
 
+  static create(timeLine: Function[], initialState?: any);
   private setState(): this;
-  add(): this;
+  add(fn: Function): this;
   getState(): any;
   goTo(fn: Function): this;
   next(): this;
