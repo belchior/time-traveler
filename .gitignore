@@ -2,7 +2,5 @@ coverage/
 dist/
 node_modules/
 examples/
-cjs/
-mjs/
 
 demo/src/time-traveler.js
